@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Políticas de Envelhecimento Ativo no SUS • Vida Saudável 60+</title>
+  <meta name="description" content="Marco legal do SUS para a pessoa idosa (PNSPI), instrumentos de gestão e cuidado, participação e protagonismo, e políticas públicas de mobilidade para o envelhecimento ativo." />
+
+  <!-- Fontes e Ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+  <!-- CSS base do projeto -->
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+  <!-- Barra de progresso -->
+  <div id="progressBar" aria-hidden="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="index.html#noticias" aria-label="Página inicial Vida Saudável 60+">
+        <span class="brand-badge" aria-hidden="true">60+</span>
+        <div class="brand-text">
+          <h1>Vida Saudável</h1>
+          <p>Saúde • Movimento • Longevidade</p>
+        </div>
+      </a>
+
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="topNav" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav id="topNav" class="top-nav" aria-label="Navegação principal">
+        <a href="#conceito-oms">Conceito</a>
+        <a href="#marco-legal">Marco legal</a>
+        <a href="#instrumentos">Instrumentos</a>
+        <a href="#participacao">Participação</a>
+        <a href="#mobilidade">Mobilidade</a>
+        <a href="#video">Vídeo</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Botão voltar -->
+  <section class="section container" style="padding-top:20px; padding-bottom:0;">
+    <a class="btn btn-light" href="index.html#noticias">← Voltar para a página inicial</a>
+  </section>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" data-animate>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <small id="dataHoje" class="hero-date" aria-live="polite"></small>
+        <h2>Políticas de <span>Envelhecimento Ativo</span> no SUS</h2>
+        <p>Envelhecimento ativo é otimizar oportunidades de <strong>saúde</strong>, <strong>participação</strong> e <strong>segurança</strong> para melhorar a qualidade de vida à medida que envelhecemos. Veja como o SUS organiza esse cuidado.</p>
+
+        <!-- Áudio da página inteira -->
+        <div class="audio-toolbar">
+          <button class="audio-btn" data-section="page-all">
+            🔊 Ouvir a página inteira
+          </button>
+        </div>
+
+        <!-- Sumário -->
+        <nav class="toc" aria-label="Sumário desta página">
+          <strong>Sumário</strong>
+          <ul>
+            <li><a href="#conceito-oms">Conceito estratégico (OMS)</a></li>
+            <li><a href="#marco-legal">1. Marco legal e conceitual no SUS</a></li>
+            <li><a href="#instrumentos">2. Instrumentos de gestão e cuidado</a></li>
+            <li><a href="#participacao">3. Participação e protagonismo</a></li>
+            <li><a href="#mobilidade">5. Políticas de mobilidade e envelhecimento</a></li>
+            <li><a href="#video">Vídeo explicativo</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <aside class="alerta" role="note" aria-label="Aviso importante" data-animate>
+        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+        <div>
+          <h3>Informação, não diagnóstico</h3>
+          <p>Conteúdo educativo. Procure sua equipe de saúde para avaliação clínica ou dúvidas sobre direitos e serviços.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <main>
+    <!-- Conceito OMS -->
+    <section id="conceito-oms" class="section container" data-animate>
+      <div class="audio-toolbar">
+        <button class="audio-btn" data-section="conceito-oms">🔊 Ouvir este tópico</button>
+      </div>
+
+      <h3 class="section-title"><i class="fa-solid fa-globe"></i> Conceito estratégico (OMS)</h3>
+      <p>A Organização Mundial da Saúde (OMS) define <strong>envelhecimento ativo</strong> como o processo de <em>otimizar oportunidades para saúde, participação e segurança</em> com o objetivo de realçar a qualidade de vida ao envelhecer. No SUS, esse conceito orienta políticas, serviços e ações intersetoriais.</p>
+    </section>
+
+    <!-- 1. Marco Legal e Conceitual -->
+    <section id="marco-legal" class="section container" data-animate>
+      <div class="audio-toolbar">
+        <button class="audio-btn" data-section="marco-legal">🔊 Ouvir este tópico</button>
+      </div>
+
+      <h3 class="section-title"><i class="fa-solid fa-scale-balanced"></i> 1. Marco legal e conceitual no SUS</h3>
+      <p>A <strong>Política Nacional de Saúde da Pessoa Idosa (PNSPI)</strong> (2006), consolidada na <strong>Portaria de Consolidação GM/MS nº 2/2017</strong>, organiza a atenção à saúde do idoso no Brasil com foco em:</p>
+
+      <div class="callouts">
+        <div class="callout">
+          <h4><i class="fa-solid fa-person-cane"></i> Abordagem centrada na funcionalidade</h4>
+          <p>O cuidado parte da <strong>capacidade funcional</strong> global (grau de dependência, risco de fragilidade) como principal indicador de saúde da pessoa idosa.</p>
+        </div>
+        <div class="callout">
+          <h4><i class="fa-solid fa-diagram-project"></i> Integralidade e intersetorialidade</h4>
+          <p>Articulação entre pontos da <strong>Rede de Atenção à Saúde</strong> e com outros setores (assistência social, transporte, urbanismo, cultura), reduzindo fragmentação do cuidado.</p>
+        </div>
+        <div class="callout">
+          <h4><i class="fa-solid fa-heart-pulse"></i> Promoção de hábitos saudáveis</h4>
+          <p>Ações para alimentação adequada, <strong>atividade física regular</strong>, controle de DCNT, saúde mental e <strong>convivência social</strong> estimulante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Instrumentos de Gestão e Cuidado -->
+    <section id="instrumentos" class="section container" data-animate>
+      <div class="audio-toolbar">
+        <button class="audio-btn" data-section="instrumentos">🔊 Ouvir este tópico</button>
+      </div>
+
+      <h3 class="section-title"><i class="fa-solid fa-toolbox"></i> 2. Instrumentos de gestão e cuidado no SUS</h3>
+
+      <div class="callouts">
+        <div class="callout">
+          <h4><i class="fa-solid fa-notes-medical"></i> Caderneta de Saúde da Pessoa Idosa</h4>
+          <p>Instrumento do Ministério da Saúde para <strong>avaliação multidimensional</strong> (funcional e psicossocial), identificação de vulnerabilidades e orientação ao <strong>autocuidado</strong>, promovendo autonomia e independência.</p>
+        </div>
+        <div class="callout">
+          <h4><i class="fa-solid fa-people-arrows"></i> Linhas de cuidado &amp; Matriciamento</h4>
+          <p>Organizam fluxos entre APS, atenção especializada, reabilitação e hospital. O <strong>apoio matricial</strong> (ex.: geriatria/gerontologia) fortalece a APS com educação permanente e planos compartilhados.</p>
+        </div>
+        <div class="callout">
+          <h4><i class="fa-solid fa-house-medical"></i> Atenção Domiciliar e cuidado comunitário</h4>
+          <ul class="list">
+            <li><strong>Melhor em Casa</strong> (SAD): modalidade domiciliar integrada à Rede de Atenção.</li>
+            <li><strong>PAI</strong> (SP): acompanhamento no domicílio, apoio às AVD.</li>
+            <li><strong>PMC</strong> (BH): parceria Saúde–Assistência para prevenir institucionalização e apoiar a família cuidadora.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Participação e Protagonismo -->
+    <section id="participacao" class="section container" data-animate>
+      <div class="audio-toolbar">
+        <button class="audio-btn" data-section="participacao">🔊 Ouvir este tópico</button>
+      </div>
+
+      <h3 class="section-title"><i class="fa-solid fa-users"></i> 3. Ênfase na participação e no protagonismo</h3>
+      <p>Envelhecer ativamente é <strong>mais que ausência de doença</strong>: envolve manter a capacidade funcional com <strong>engajamento ativo</strong> na vida comunitária.</p>
+
+      <div class="tips">
+        <div class="tip">
+          <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
+          <div><strong>Inclusão social e intergeracionalidade:</strong> atividades socioculturais, esporte/lazer e projetos que aproximam gerações combatem o idadismo e favorecem reinserção social.</div>
+        </div>
+        <div class="tip">
+          <i class="fa-solid fa-id-card-clip" aria-hidden="true"></i>
+          <div><strong>Valorização da cidadania:</strong> enfrentamento à violência/abandono; informação sobre direitos, canais de denúncia e rede de proteção.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Políticas públicas de mobilidade -->
+    <section id="mobilidade" class="section container" data-animate>
+      <div class="audio-toolbar">
+        <button class="audio-btn" data-section="mobilidade">🔊 Ouvir este tópico</button>
+      </div>
+
+      <h3 class="section-title"><i class="fa-solid fa-person-walking-with-cane"></i> 5. Políticas públicas de mobilidade e envelhecimento</h3>
+      <p>A mobilidade segura sustenta a <strong>autonomia</strong>, o acesso a serviços e a participação social. Ações intersetoriais (saúde, transporte, urbanismo, assistência) favorecem o <strong>envelhecimento ativo</strong> no território.</p>
+
+      <div class="callouts">
+        <div class="callout">
+          <h4><i class="fa-solid fa-road"></i> Acessibilidade urbana</h4>
+          <ul class="list">
+            <li>Calçadas regulares com rampas e <strong>piso tátil</strong> contínuo.</li>
+            <li>Travessias com <strong>tempo semafórico ampliado</strong>, faixas elevadas e boa <strong>iluminação</strong>.</li>
+            <li>Espaços de descanso (bancos, sombreamento) em rotas de serviços públicos.</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <h4><i class="fa-solid fa-bus"></i> Transporte público amigável</h4>
+          <ul class="list">
+            <li>Ônibus com <strong>piso baixo</strong>, elevadores/plataformas e assentos preferenciais.</li>
+            <li>Pontos com cobertura, assentos e sinalização clara (visual/sonora).</li>
+            <li>Informação acessível (tamanho de fonte, contrastes, aplicativos simples).</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <h4><i class="fa-solid fa-heart-circle-bolt"></i> Mobilidade ativa &amp; reabilitação</h4>
+          <ul class="list">
+            <li>Grupos de <strong>caminhada orientada</strong> em UBS, praças e parques.</li>
+            <li>Integração com <strong>reabilitação</strong> (fisioterapia) e <strong>Tecnologia Assistiva</strong> (bengalas, andadores, barras).</li>
+            <li>Ambientes públicos <strong>amigáveis à idade</strong> (diretrizes de “cidade amiga do idoso”).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tabela: Desafios x Ações -->
+      <div class="compare" style="margin-top:12px">
+        <table class="clean table--stack" aria-label="Desafios e ações para mobilidade no envelhecimento">
+          <thead>
+            <tr>
+              <th style="width:50%">Desafio</th>
+              <th style="width:50%">Ação intersetorial</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-th="Desafio">Quedas em calçadas irregulares e pouca iluminação</td>
+              <td data-th="Ação">Manutenção de calçadas, <strong>iluminação pública</strong>, travessias elevadas e <strong>piso tátil</strong></td>
+            </tr>
+            <tr>
+              <td data-th="Desafio">Dificuldade para embarque no transporte</td>
+              <td data-th="Ação"><strong>Piso baixo</strong>, elevadores, assentos preferenciais e pontos com cobertura/assento</td>
+            </tr>
+            <tr>
+              <td data-th="Desafio">Baixa capacidade funcional</td>
+              <td data-th="Ação"><strong>Reabilitação</strong> + grupos de caminhada e <strong>TA</strong> (bengala/andador)</td>
+            </tr>
+            <tr>
+              <td data-th="Desafio">Informação pouco acessível</td>
+              <td data-th="Ação">Sinalização com alto contraste, fontes grandes e canais digitais simples</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Vídeo -->
+    <section id="video" class="section container" aria-labelledby="titulo-video" data-animate>
+      <div class="audio-toolbar">
+        <button class="audio-btn" data-section="video">🔊 Ouvir descrição do vídeo</button>
+      </div>
+
+      <h3 id="titulo-video" class="section-title">
+        <i class="fa-solid fa-video" aria-hidden="true"></i> Vídeo explicativo
+      </h3>
+
+      <figure class="figure" role="group" aria-label="Vídeo: políticas de envelhecimento ativo no SUS">
+        <div class="video-wrap" role="region" aria-label="Player do YouTube: Políticas de envelhecimento ativo no SUS">
+          <iframe
+            title="Políticas de Envelhecimento Ativo no SUS — Vídeo"
+            src="https://www.youtube-nocookie.com/embed/K3C0PdKDgIM?rel=0&modestbranding=1"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <figcaption class="video-caption">
+          Políticas de envelhecimento ativo no SUS e como acessar serviços na rede.
+          <br>
+          <a class="video-actions" href="https://youtu.be/K3C0PdKDgIM" target="_blank" rel="noopener">
+            Abrir no YouTube
+          </a>
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <!-- Voltar ao topo -->
+  <button id="toTop" class="to-top" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Botão modo leitura fácil -->
+  <button id="easyReadBtn" aria-label="Ativar modo leitura fácil">
+    👁️ Leitura Fácil
+  </button>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="anoAtual"></span> Vida Saudável 60+. Conteúdo educativo.</p>
+    </div>
+  </footer>
+
+  <!-- JS desta página (mesmo padrão das outras) -->
+  <script>
+    // Data de hoje em português
+    (function setDataHoje(){
+      const el = document.getElementById('dataHoje');
+      if(!el) return;
+      const agora = new Date();
+      const dias = ['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+      const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+      const texto = `${dias[agora.getDay()]}, ${agora.getDate()} de ${meses[agora.getMonth()]} de ${agora.getFullYear()}`;
+      el.textContent = texto;
+    })();
+
+    // Ano atual no rodapé
+    (function(){
+      const el = document.getElementById('anoAtual');
+      if(el) el.textContent = new Date().getFullYear();
+    })();
+
+    // Menu responsivo
+    const menuBtn = document.getElementById('menuBtn');
+    const topNav = document.getElementById('topNav');
+    if (menuBtn && topNav) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = topNav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    // Barra de progresso + botão voltar ao topo
+    const bar = document.getElementById('progressBar');
+    const toTop = document.getElementById('toTop');
+
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const s = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      if (bar) bar.style.width = s + '%';
+      if (toTop) toTop.classList.toggle('show', h.scrollTop > 300);
+    }, { passive: true });
+
+    if (toTop) {
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior:'smooth' });
+      });
+    }
+
+    // Animação de entrada
+    const ob = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, {threshold:0.2});
+
+    document.querySelectorAll('[data-animate]').forEach(el => ob.observe(el));
+
+    // Modo leitura fácil
+    const easyBtn = document.getElementById('easyReadBtn');
+    if (easyBtn) {
+      easyBtn.addEventListener('click', () => {
+        document.body.classList.toggle('easy-read');
+      });
+    }
+
+    // ===== LEITURA EM ÁUDIO POR TÓPICO =====
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) {
+        alert('Seu navegador não suporta leitura em voz. Tente usar o Google Chrome 😉');
+        return;
+      }
+      window.speechSynthesis.cancel();
+
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'pt-BR';
+      utter.rate = 0.95;
+      utter.pitch = 1;
+      window.speechSynthesis.speak(utter);
+    }
+
+    document.querySelectorAll('.audio-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-section');
+
+        if (target === 'page-all') {
+          const main = document.querySelector('main');
+          if (!main) return;
+          const text = main.innerText;
+          speakText(text);
+          return;
+        }
+
+        const section = document.getElementById(target);
+        if (!section) return;
+
+        const text = section.innerText;
+        speakText(text);
+      });
+    });
+
+    // Cancela áudio ao sair da página
+    window.addEventListener('beforeunload', () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    });
+  </script>
+</body>
+</html>

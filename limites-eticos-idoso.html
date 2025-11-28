@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Limites Éticos no Cuidado à Pessoa Idosa • Vida Saudável 60+</title>
+  <meta name="description" content="Princípios, limites e boas práticas éticas no cuidado à pessoa idosa: autonomia, consentimento, privacidade, segurança, conflitos de interesse e cuidados paliativos." />
+
+  <!-- Fontes e Ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+  <!-- ===== CSS INTEGRADO ===== -->
+  <style>
+    :root{
+      --bg:#fffaf3; --text:#232323; --muted:#444;
+      --brand:#ff7a00; --brand-2:#ffd633;
+      --card:#fff; --border:#e5e0d0;
+    }
+
+    /* Reset básico */
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--bg); color:var(--text);
+      line-height:1.8; font-size:1.06rem;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+
+    /* ===== Modo Leitura Fácil ===== */
+    body.easy-read{
+      background:#fff; color:#000;
+      font-size:1.2rem; line-height:1.95;
+      letter-spacing:.2px;
+    }
+
+    /* ===== Layout base ===== */
+    .container{width:90%;max-width:1100px;margin:0 auto}
+    .site-header{
+      background:var(--card); border-bottom:2px solid var(--border);
+      position:sticky; top:0; z-index:100; padding:1rem 0;
+    }
+    .header-grid{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:inherit}
+    .brand-badge{
+      width:48px;height:48px;border-radius:50%;
+      background:var(--brand);color:#fff;font-weight:700;display:grid;place-items:center
+    }
+    .brand-text h1{font-family:'Merriweather',serif;font-size:1.45rem}
+    .brand-text p{font-size:.9rem;color:var(--muted)}
+
+    .menu-btn{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer}
+    .top-nav{display:flex;gap:1.5rem}
+    .top-nav a{text-decoration:none;color:var(--text);font-weight:500}
+    .top-nav a:hover{color:var(--brand)}
+
+    /* ===== Hero ===== */
+    .hero{
+      background:linear-gradient(135deg,#fff7eb,#ffedd1);
+      border-bottom:2px solid var(--border); padding:2.5rem 0 3rem;
+    }
+    .hero-grid{display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start}
+    .hero-text{flex:2 1 420px}
+    .hero h2{font-family:'Merriweather',serif;font-size:2rem;color:var(--brand);margin:.25rem 0 1rem}
+    .hero h2 span{color:var(--text)}
+    .hero p{color:var(--muted);font-size:1.06rem;margin-bottom:1.5rem}
+    .hero-date{display:inline-block;background:var(--brand);color:#fff;
+      padding:.3rem .6rem;border-radius:6px;font-size:.9rem}
+    .toc{background:#fff;border-left:5px solid var(--brand);padding:1rem;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    .toc strong{display:block;margin-bottom:.6rem}
+    .toc ul{list-style:none}
+    .toc li{margin:.4rem 0}
+    .toc a{color:var(--brand);text-decoration:none}
+    .toc a:hover{text-decoration:underline}
+    .alerta{
+      flex:1 1 260px;background:#fff5e6;border:1px solid #ffd699;border-radius:10px;
+      padding:1rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:0 2px 6px rgba(0,0,0,.05)
+    }
+    .alerta h3{color:#a66300;margin-bottom:.25rem}
+
+    /* ===== Seções ===== */
+    .section{
+      background:var(--card);border-radius:12px;padding:2rem;margin:2.5rem auto;
+      box-shadow:0 3px 8px rgba(0,0,0,.05)
+    }
+    .section-title{
+      font-family:'Merriweather',serif;color:var(--brand);margin-bottom:1rem;
+      display:flex;gap:.5rem;align-items:center
+    }
+    .list{list-style:disc;padding-left:1.4rem;color:var(--muted)}
+    .list li{margin:.4rem 0}
+    .callouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:1rem}
+    .callout{background:#fffaf1;border:1px solid var(--border);border-left:6px solid var(--brand);padding:1rem;border-radius:10px}
+    .callout h4{color:var(--brand);margin-bottom:.3rem}
+    .tips{margin-top:1rem}
+    .tip{display:flex;gap:.6rem;background:#fff8e1;padding:.75rem;border-radius:8px;margin:.5rem 0}
+    .tip i{color:var(--brand)}
+
+    /* ===== Tabelas ===== */
+    .compare{margin-top:1rem}
+    .clean{width:100%;border-collapse:collapse}
+    .clean th,.clean td{border:1px solid #e6e6e6;padding:.9rem;vertical-align:top}
+    .clean th{background:#fff2cc;font-weight:600}
+
+    /* ===== Voltar ao topo & Progress ===== */
+    #progressBar{position:fixed;top:0;left:0;height:5px;background:var(--brand);width:0%;z-index:999}
+    .to-top{
+      position:fixed;right:1rem;bottom:1rem;width:46px;height:46px;border-radius:50%;
+      border:0;background:var(--brand);color:#fff;font-size:1.2rem;display:none;cursor:pointer
+    }
+    .to-top.show{display:grid;place-items:center}
+
+    /* ===== Botão leitura fácil ===== */
+    #easyReadBtn{
+      position:fixed;left:1rem;bottom:1rem;background:var(--brand-2);color:#000;border:0;
+      border-radius:22px;padding:.55rem 1rem;font-weight:700;cursor:pointer;box-shadow:0 3px 6px rgba(0,0,0,.15)
+    }
+
+    /* ===== Rodapé ===== */
+    .site-footer{background:var(--card);border-top:2px solid var(--border);text-align:center;padding:1.5rem 0;color:var(--muted);font-size:.95rem}
+
+    /* ===== Responsividade ===== */
+    @media (max-width:768px){
+      .menu-btn{display:block}
+      .top-nav{
+        display:none;flex-direction:column;position:absolute;right:0;top:70px;width:100%;
+        background:var(--card);border-top:2px solid var(--border);padding:1rem
+      }
+      .top-nav.open{display:flex}
+      .hero h2{font-size:1.6rem}
+      .clean th,.clean td{display:block;width:100%}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Barra de progresso -->
+  <div id="progressBar" aria-hidden="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" role="banner">
+    <div class="container header-grid">
+      <a class="brand" href="index.html" aria-label="Página inicial Vida Saudável 60+">
+        <span class="brand-badge" aria-hidden="true">60+</span>
+        <div class="brand-text">
+          <h1>Vida Saudável</h1>
+          <p>Saúde • Dicas • Direitos</p>
+        </div>
+      </a>
+
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="topNav" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav id="topNav" class="top-nav" aria-label="Navegação principal">
+        <a href="index.html#noticias">Notícias</a>
+        <a href="index.html#videos">Vídeos</a>
+        <a href="index.html#dicas">Dicas</a>
+        <a href="index.html#sobre">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <small id="dataHoje" class="hero-date" aria-live="polite"></small>
+        <h2>Limites <span>Éticos</span> no Cuidado à Pessoa Idosa</h2>
+        <p>Respeitar <strong>autonomia</strong>, <strong>dignidade</strong> e <strong>segurança</strong> é a base de um cuidado ético. Este guia reúne princípios e limites práticos para cuidadores, familiares e profissionais.</p>
+
+        <!-- Sumário -->
+        <nav class="toc" aria-label="Sumário desta página">
+          <strong>Sumário</strong>
+          <ul>
+            <li><a href="#principios">1. Princípios éticos essenciais</a></li>
+            <li><a href="#consentimento">2. Consentimento &amp; capacidade de decisão</a></li>
+            <li><a href="#autonomia-seguranca">3. Autonomia × segurança</a></li>
+            <li><a href="#privacidade">4. Privacidade &amp; confidencialidade</a></li>
+            <li><a href="#conflitos">5. Conflitos de interesse &amp; finanças</a></li>
+            <li><a href="#contencoes">6. Contenções físicas/químicas</a></li>
+            <li><a href="#paliativos">7. Finitude &amp; cuidados paliativos</a></li>
+            <li><a href="#violencia">8. Violência, abuso &amp; proteção</a></li>
+            <li><a href="#limites-cuidador">9. Limites do cuidador &amp; autocuidado</a></li>
+            <li><a href="#checklist">Checklist ético rápido</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <aside class="alerta" role="note" aria-label="Aviso importante">
+        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+        <div>
+          <h3>Informação</h3>
+          <p>Conteúdo educativo. Para dúvidas jurídicas, éticas profissionais ou casos complexos, procure sua equipe de saúde, conselho de classe ou assessoria jurídica local.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== CONTEÚDO COMPLETO ===== -->
+  <main role="main">
+    <!-- 1. Princípios -->
+    <section id="principios" class="section container">
+      <h3 class="section-title"><i class="fa-solid fa-scale-balanced"></i> 1. Princípios éticos essenciais</h3>
+      <div class="callouts">
+        <div class="callout">
+          <h4><i class="fa-solid fa-user-check"></i> Autonomia</h4>
+          <p>Direito de escolher, recusar ou aceitar cuidados, conforme valores e preferências da pessoa idosa.</p>
+        </div>
+        <div class="callout">
+          <h4><i class="fa-solid fa-hand-holding-heart"></i> Beneficência</h4>
+          <p>Agir para o bem-estar, promovendo saúde e qualidade de vida.</p>
+        </div>
+        <div class="callout">
+          <h4><i class="fa-solid fa-ban"></i> Não maleficência</h4>
+          <p>Evitar danos físicos, psicológicos, morais ou sociais (inclui evitar intervenções desnecessárias).</p>
+        </div>
+        <div class="callout">
+          <h4><i class="fa-solid fa-people-group"></i> Justiça</h4>
+          <p>Acesso equitativo a serviços, respeito à diversidade e combate ao idadismo (preconceito por idade).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Consentimento -->
+    <section id="consentimento" class="section container">
+      <h3 class="section-title"><i class="fa-solid fa-file-signature"></i> 2. Consentimento &amp; capacidade de decisão</h3>
+      <ul class="list">
+        <li><strong>Consentimento informado</strong>: explicar objetivos, riscos, benefícios e alternativas em linguagem simples.</li>
+        <li><strong>Avaliar capacidade</strong> de decisão (entender, reter, ponderar e comunicar escolhas). Capacidade pode variar ao longo do tempo.</li>
+        <li><strong>Decisão compartilhada</strong>: incluir a pessoa idosa nas decisões sempre que possível; envolver família/cuidador quando houver autorização.</li>
+        <li><strong>Representação</strong>: quando a pessoa não puder decidir, seguir documentos válidos (ex.: diretivas antecipadas) e representante legal, conforme normas locais.</li>
+      </ul>
+      <div class="tips">
+        <div class="tip"><i class="fa-solid fa-language" aria-hidden="true"></i><div>Use material visual e repita informações em momentos diferentes.</div></div>
+        <div class="tip"><i class="fa-solid fa-headset" aria-hidden="true"></i><div>Ofereça tempo para perguntas e certifique-se de que houve compreensão.</div></div>
+      </div>
+    </section>
+
+    <!-- 3. Autonomia x Segurança -->
+    <section id="autonomia-seguranca" class="section container">
+      <h3 class="section-title"><i class="fa-solid fa-scale-unbalanced"></i> 3. Autonomia × segurança</h3>
+      <p>Equilibrar liberdade e proteção exige <strong>avaliação individual</strong> de riscos e preferências. Medidas menos restritivas devem ser priorizadas antes de qualquer restrição maior.</p>
+      <div class="compare">
+        <table class="clean table--stack" aria-label="Exemplos práticos de equilíbrio entre autonomia e segurança">
+          <thead>
+            <tr>
+              <th style="width:50%">Situação</th>
+              <th style="width:50%">Conduta ética</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-th="Situação">Desejo de caminhar sozinho, mas risco de queda</td>
+              <td data-th="Conduta">Planejar rotas seguras, uso de bengala/andador, horários com menos movimento e checagem prévia do trajeto</td>
+            </tr>
+            <tr>
+              <td data-th="Situação">Recusa de um cuidado de rotina</td>
+              <td data-th="Conduta">Revisar explicação, entender motivos, propor alternativas e respeitar decisão quando houver capacidade</td>
+            </tr>
+            <tr>
+              <td data-th="Situação">Saídas desacompanhadas com desorientação ocasional</td>
+              <td data-th="Conduta">Identificação pessoal, contato de emergência, tecnologia de localização e educação da vizinhança</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. Privacidade -->
+    <section id="privacidade" class="section container">
+      <h3 class="section-title"><i class="fa-solid fa-user-shield"></i> 4. Privacidade &amp; confidencialidade</h3>
+      <ul class="list">
+        <li>Coletar apenas dados necessários e guardar com <strong>sigilo</strong>.</li>
+        <li>Evitar conversas sensíveis em locais públicos; cuidado com <strong>exposição</strong> durante banho/troca.</li>
+        <li>Compartilhar informações de saúde somente com <strong>autorização</strong> ou quando exigido por normas de proteção.</li>
+        <li>Em meios digitais, usar <strong>senhas fortes</strong> e dispositivos bloqueados.</li>
+      </ul>
+    </section>
+
+    <!-- 5. Conflitos de interesse -->
+    <section id="conflitos" class="section container">
+      <h3 class="section-title"><i class="fa-solid fa-hand-holding-dollar"></i> 5. Conflitos de interesse &amp; finanças</h3>
+      <p>Evitar qualquer forma de <strong>exploração financeira</strong> ou benefícios pessoais vinculados ao cuidado.</p>
+      <ul class="list">
+        <li>Nunca condicionar cuidado a presentes, dinheiro ou vantagens.</li>
+        <li>Separar <strong>tarefas financeiras</strong> do cuidado, salvo autorização formal da família/representante.</li>
+        <li>Registrar por escrito acordos de pagamento e reembolsos de despesas.</li>
+      </ul>
+    </section>
+
+    <!-- 6. Contenções -->
+    <section id="contencoes" class="section container">
+      <h3 class="section-title"><i class="fa-solid fa-link-slash"></i> 6. Contenções físicas e químicas</h3>
+      <p>Contenção é medida <strong>excepcional e temporária</strong>. Só considerar quando houver <strong>risco iminente</strong> e após tentar estratégias menos restritivas.</p>
+      <ul class="list">
+        <li>Requer <strong>indicação clínica</strong>, justificativa, monitorização e reavaliações frequentes.</li>
+        <li>Documentar motivo, duração e alternativas tentadas.</li>
+        <li>Envolver família/cuidador e equipe multiprofissional.</li>
+      </ul>
+    </section>
+
+    <!-- 7. Paliativos -->
+    <section id="paliativos" class="section container">
+      <h3 class="section-title"><i class="fa-solid fa-dove"></i> 7. Finitude &amp; cuidados paliativos</h3>
+      <p>Respeitar valores e preferências ao final da vida, priorizando <strong>conforto</strong>, <strong>alívio de sintomas</strong> e <strong>dignidade</strong>. Dialogar sobre <strong>diretivas antecipadas</strong> quando houver.</p>
+      <div class="tips">
+        <div class="tip"><i class="fa-solid fa-comments" aria-hidden="true"></i><div>Conversa franca e compassiva: ouvir o que importa para a pessoa.</div></div>
+        <div class="tip"><i class="fa-solid fa-people-carry-box" aria-hidden="true"></i><div>Integrar equipe multiprofissional e rede de apoio (família, amigos, comunidade).</div></div>
+      </div>
+    </section>
+
+    <!-- 8. Violência e abuso -->
+    <section id="violencia" class="section container">
+      <h3 class="section-title"><i class="fa-solid fa-shield"></i> 8. Violência, abuso &amp; proteção</h3>
+      <p>Fique atento a sinais de <strong>violência física, psicológica, sexual, negligência ou financeira</strong>. Proteger a pessoa idosa é imperativo ético.</p>
+      <ul class="list">
+        <li>Marcas inexplicadas, medo, retraimento, higiene precária ou gastos incomuns são <strong>sinais de alerta</strong>.</li>
+        <li>Registre fatos de forma objetiva e busque a <strong>rede local de proteção</strong> (saúde, assistência social e canais oficiais).</li>
+        <li>Priorize a <strong>segurança imediata</strong> e apoio psicossocial.</li>
+      </ul>
+    </section>
+
+    <!-- 9. Limites do cuidador -->
+    <section id="limites-cuidador" class="section container">
+      <h3 class="section-title"><i class="fa-solid fa-user-nurse"></i> 9. Limites do cuidador &amp; autocuidado</h3>
+      <ul class="list">
+        <li><strong>Não</strong> prescrever, suspender ou ajustar medicamentos por conta própria.</li>
+        <li>Registrar intercorrências e comunicar à equipe de saúde.</li>
+        <li>Respeitar limites físicos e emocionais; organizar <strong>rodízio/pausas</strong> para evitar exaustão.</li>
+        <li>Capacitar-se continuamente (manuseio, prevenção de quedas, primeiros socorros).</li>
+      </ul>
+    </section>
+
+    <!-- Checklist -->
+    <section id="checklist" class="section container">
+      <h3 class="section-title"><i class="fa-solid fa-list-check"></i> Checklist ético rápido</h3>
+      <div class="compare">
+        <table class="clean table--stack" aria-label="Checklist ético: faça e evite">
+          <thead>
+            <tr>
+              <th style="width:50%">Faça</th>
+              <th style="width:50%">Evite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-th="Faça"><em>Escute</em> preferências e explique opções com linguagem simples</td>
+              <td data-th="Evite">Decidir sem envolver a pessoa idosa</td>
+            </tr>
+            <tr>
+              <td data-th="Faça">Documente consentimentos, recusas e orientações</td>
+              <td data-th="Evite">Realizar procedimentos sem registro</td>
+            </tr>
+            <tr>
+              <td data-th="Faça">Proteja dados e privacidade</td>
+              <td data-th="Evite">Compartilhar informações sem autorização</td>
+            </tr>
+            <tr>
+              <td data-th="Faça">Tentar alternativas antes de qualquer restrição</td>
+              <td data-th="Evite">Usar contenção como rotina</td>
+            </tr>
+            <tr>
+              <td data-th="Faça">Buscar ajuda em situações de violência/abuso</td>
+              <td data-th="Evite">Ignorar sinais de risco</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:10px;color:#555;">Este material não substitui normas de conselhos profissionais, políticas institucionais ou legislação local.</p>
+    </section>
+  </main>
+
+  <!-- Voltar ao topo + Leitura Fácil -->
+  <button id="toTop" class="to-top" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
+  <button id="easyReadBtn" aria-label="Ativar modo leitura fácil">👁️ Leitura Fácil</button>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="anoAtual"></span> Vida Saudável 60+. Conteúdo educativo.</p>
+    </div>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+    (function(){
+      // Data e ano
+      const d = new Date();
+      document.getElementById('dataHoje').textContent =
+        d.toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
+      document.getElementById('anoAtual').textContent = d.getFullYear();
+
+      // Menu mobile
+      const btn = document.getElementById('menuBtn');
+      const nav = document.getElementById('topNav');
+      btn?.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      // Barra de progresso + voltar ao topo
+      const bar = document.getElementById('progressBar');
+      const toTop = document.getElementById('toTop');
+      const onScroll = () => {
+        const h = document.documentElement;
+        const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+        if(bar) bar.style.width = scrolled + '%';
+        if(toTop){
+          h.scrollTop > 240 ? toTop.classList.add('show') : toTop.classList.remove('show');
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // Modo Leitura Fácil
+      document.getElementById('easyReadBtn').addEventListener('click', () => {
+        document.body.classList.toggle('easy-read');
+      });
+    })();
+  </script>
+</body>
+</html>

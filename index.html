@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vida Saudável 60+ • Início</title>
+
+  <meta name="description" content="Notícias, jogos, vídeos e dicas para uma vida saudável na melhor idade." />
+  <meta name="author" content="João de Cristo" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Vida Saudável 60+ • Saúde, Alimentação, Dicas e Jogos" />
+  <meta property="og:description" content="Conteúdo simples e confiável para uma vida saudável na melhor idade." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Tema do navegador -->
+  <meta name="theme-color" content="#0c6b5f" />
+
+  <!-- Fontes e Ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Link de pulo para acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-grid">
+
+      <a class="brand" href="index.html" aria-label="Página inicial Vida Saudável 60+">
+        <span class="brand-badge" aria-hidden="true">60+</span>
+        <div class="brand-text">
+          <h1>Vida Saudável</h1>
+          <p>Saúde • Alimentação • Dicas • Jogos</p>
+        </div>
+      </a>
+
+      <button
+        id="menuBtn"
+        class="menu-btn"
+        aria-expanded="false"
+        aria-controls="topNav"
+        aria-label="Abrir menu de navegação"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <nav id="topNav" class="top-nav" aria-label="Navegação principal">
+        <a href="#noticias">Notícias</a>
+        <a href="#jogos">Jogos</a>
+        <a href="#dicas">Dicas</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-labelledby="titulo-hero">
+    <div class="container hero-grid">
+
+      <div class="hero-text">
+        <small id="dataHoje" class="hero-date" aria-live="polite"></small>
+        <h2 id="titulo-hero">
+          Bem-vindo(a) ao <span>Vida Saudável 60+</span>
+        </h2>
+        <p>
+          Conteúdo simples, confiável e feito para o seu dia a dia:
+          receba dicas práticas de saúde, assista a vídeos curtos e jogue para exercitar a mente.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://telesintese.com.br/wp-content/uploads/2022/09/idoso_idosa_inclusao-digital-celular-velhice-credito_-freepik.jpg"
+          alt="Grupo de idosos sorrindo enquanto aprende a usar o celular"
+          loading="eager"
+        >
+      </div>
+    </div>
+  </section>
+
+  <main id="conteudo-principal">
+
+    <!-- ===== NOTÍCIAS ===== -->
+    <section id="noticias" class="section container" aria-labelledby="titulo-noticias">
+      <div class="section-header">
+        <h3 class="section-title" id="titulo-noticias">
+          <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+          Notícias
+        </h3>
+        <p class="section-subtitle">
+          Leia conteúdos curtos e confiáveis sobre saúde, envelhecimento ativo e bem-estar.
+        </p>
+      </div>
+
+      <div class="news-grid" role="list">
+        <!-- Cada notícia segue o mesmo “card” semântico -->
+
+        <article class="card" role="listitem">
+          <a class="thumb" href="coracao.html">
+            <img
+              src="https://clinicacopa.com.br/storage/2023/07/Cuidando-do-coracao-Dicas-para-manter-a-saude-cardiovascular-em-dia-3.jpg"
+              alt="Profissional de saúde medindo a pressão arterial de um idoso"
+              loading="lazy"
+            >
+          </a>
+          <div class="card-body">
+            <h4>
+              <a href="coracao.html">Cuidando do Coração: Energia para a Vida</a>
+            </h4>
+            <p>
+              Entenda por que o coração é o “motor” do corpo e veja cuidados simples para fortalecer a saúde cardiovascular.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <a class="thumb" href="coracao-forte.html">
+            <img
+              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop"
+              alt="Mesa com alimentos saudáveis e coloridos como frutas, legumes e grãos"
+              loading="lazy"
+            >
+          </a>
+          <div class="card-body">
+            <h4>
+              <a href="coracao-forte.html">Coração Forte Começa no Prato</a>
+            </h4>
+            <p>
+              Veja como montar pratos equilibrados que ajudam a controlar pressão, colesterol e melhoram a disposição.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <a class="thumb" href="cuidando-do-coracao.html">
+            <img
+              src="https://www.ipasemar.pa.gov.br/wp-content/uploads/2018/11/agua.jpg"
+              alt="Copo de água ao lado de uma garrafa azul"
+              loading="lazy"
+            >
+          </a>
+          <div class="card-body">
+            <h4>
+              <a href="cuidando-do-coracao.html">Cuidando do Coração na Melhor Idade</a>
+            </h4>
+            <p>
+              Hidratação, caminhada leve e pratos coloridos: hábitos simples que fazem diferença todos os dias.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <a class="thumb" href="saude-da-pele.html">
+            <img
+              src="https://clinicaportal.com.br/wp-content/uploads/2022/02/cuidados-fundamentais-com-a-pele-do-idoso.jpg"
+              alt="Mulher idosa sorrindo enquanto cuida da pele"
+              loading="lazy"
+            >
+          </a>
+          <div class="card-body">
+            <h4>
+              <a href="saude-da-pele.html">Saúde da pele: cuidados essenciais</a>
+            </h4>
+            <p>
+              Higiene suave, hidratação diária e proteção solar para manter a pele saudável e confortável.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <a class="thumb" href="inclusao-digital.html">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdj9f6ubOI4KMQ915HmLcREDOiv5u6e-VvaO3YGPH5YhwrhPIm0odGKOhT-yEns__02o&usqp=CAU"
+              alt="Pessoa idosa usando smartphone com ajuda de um familiar"
+              loading="lazy"
+            >
+          </a>
+          <div class="card-body">
+            <h4>
+              <a href="inclusao-digital.html">Inclusão digital no envelhecimento ativo</a>
+            </h4>
+            <p>
+              Como a tecnologia pode aumentar a autonomia, a segurança e a conexão com a família e amigos.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <a class="thumb" href="prevencao-quedas.html">
+            <img
+              src="https://www.saude.ce.gov.br/wp-content/uploads/sites/9/2023/08/queda-idosos.png"
+              alt="Ilustração sobre prevenção de quedas em idosos"
+              loading="lazy"
+            >
+          </a>
+          <div class="card-body">
+            <h4>
+              <a href="prevencao-quedas.html">Prevenção de quedas e lesões</a>
+            </h4>
+            <p>
+              Dicas para adaptar a casa e tornar o dia a dia mais seguro, reduzindo o risco de acidentes.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <a class="thumb" href="politicas-envelhecimento-sus.html">
+            <img
+              src="https://ginast.com.br/wp-content/uploads/2017/02/Idosos-na-academia-ao-ar-livre-800x533-800x470-1.jpg"
+              alt="Idosos praticando exercícios físicos em uma academia ao ar livre"
+              loading="lazy"
+            >
+          </a>
+          <div class="card-body">
+            <h4>
+              <a href="politicas-envelhecimento-sus.html">Políticas de envelhecimento ativo no SUS</a>
+            </h4>
+            <p>
+              Conheça programas do SUS que apoiam a saúde, a autonomia e a qualidade de vida na melhor idade.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <a class="thumb" href="limites-eticos-idoso.html">
+            <img
+              src="https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia31524/idosos-precisam-de-cuidados-e-cuidadores-precisam-ter-etica-cpt.jpg"
+              alt="Cuidadora conversando com um idoso sentado em uma poltrona"
+              loading="lazy"
+            >
+          </a>
+          <div class="card-body">
+            <h4>
+              <a href="limites-eticos-idoso.html">Limites éticos no cuidado ao idoso</a>
+            </h4>
+            <p>
+              Respeito, autonomia e comunicação clara como bases do cuidado responsável e humanizado.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <a class="thumb" href="Cuidadogolpes.html">
+            <img
+              src="https://sindifisco.org.br/wp-content/uploads/2023/08/Golpe.jpg"
+              alt="Aviso de atenção sobre golpes virtuais e fake news"
+              loading="lazy"
+            >
+          </a>
+          <div class="card-body">
+            <h4>
+              <a href="Cuidadogolpes.html">Cuidado com golpes e fake news</a>
+            </h4>
+            <p>
+              Golpes estão cada vez mais comuns. Aprenda sinais de alerta e como buscar informações confiáveis.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== JOGOS ===== -->
+    <section id="jogos" class="section container" aria-labelledby="titulo-jogos">
+      <div class="section-header">
+        <h3 class="section-title" id="titulo-jogos">
+          <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+          Jogos
+        </h3>
+        <p class="section-subtitle">
+          Exercite a mente com atividades leves e divertidas, pensadas para todas as idades.
+        </p>
+      </div>
+
+      <div class="apps-grid" role="list">
+        <article class="app-card" role="listitem">
+          <div class="app-icon" aria-hidden="true">🧠</div>
+          <div class="app-body">
+            <h4>Jogo da Memória</h4>
+            <p>Treine sua memória com níveis fáceis, médios e desafiadores.</p>
+            <a class="btn" href="memoria.html">Jogar</a>
+          </div>
+        </article>
+
+        <article class="app-card" role="listitem">
+          <div class="app-icon" aria-hidden="true">🔤</div>
+          <div class="app-body">
+            <h4>Caça-Palavras</h4>
+            <p>Encontre palavras escondidas em várias direções e temas diferentes.</p>
+            <a class="btn" href="caca-palavras.html">Jogar</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== DICAS ===== -->
+    <section id="dicas" class="section container" aria-labelledby="titulo-dicas">
+      <h3 class="section-title" id="titulo-dicas">
+        <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+        Dicas rápidas
+      </h3>
+
+      <ul class="tips" aria-label="Lista de dicas rápidas de cuidado com a saúde">
+        <li>
+          <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+          Beba água ao longo do dia. Deixe uma garrafinha sempre por perto.
+        </li>
+        <li>
+          <i class="fa-solid fa-shoe-prints" aria-hidden="true"></i>
+          Caminhe de 10 a 20 minutos diariamente, respeitando seus limites.
+        </li>
+        <li>
+          <i class="fa-solid fa-apple-whole" aria-hidden="true"></i>
+          Prefira pratos coloridos com frutas, legumes e verduras variados.
+        </li>
+        <li>
+          <i class="fa-solid fa-bed" aria-hidden="true"></i>
+          Mantenha um horário regular para dormir e acordar, buscando um sono de qualidade.
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre" class="section container" aria-labelledby="titulo-sobre">
+      <h3 class="section-title" id="titulo-sobre">
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+        Sobre o projeto
+      </h3>
+
+      <p>
+        Este material foi produzido por alunos do curso de Fisioterapia da
+        <strong>Faculdade de Ciências Médicas</strong>,
+        como parte do <strong>Projeto de Produção Interdisciplinar III</strong>.
+      </p>
+
+      <p>
+        O conteúdo foi elaborado pelos estudantes com base em pesquisa e conhecimento acadêmico.
+        Algumas imagens e vídeos foram gerados com auxílio de inteligência artificial (IA),
+        para melhorar a visualização dos temas.
+      </p>
+
+      <p>
+        O material tem caráter educativo e visa aproximar teoria e prática na promoção da saúde,
+        incentivando o envelhecimento ativo e com qualidade de vida.
+      </p>
+
+      <p>
+        <em>
+          Desenvolvido por <strong>João de Cristo</strong> — Estudante do 2º período de
+          <strong>Análise e Desenvolvimento de Sistemas (ADS)</strong> na <strong>PUC Minas</strong>.
+        </em>
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        &copy; <span id="anoAtual"></span> Vida Saudável 60+. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

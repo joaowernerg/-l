@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuidados com Golpes Digitais • Vida Saudável 60+</title>
+  <meta name="description" content="Aprenda a reconhecer e evitar golpes digitais. Dicas de segurança, privacidade e uso consciente da tecnologia para pessoas idosas.">
+  <meta name="author" content="Projeto Vida Saudável 60+">
+
+  <!-- Fontes e Ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fffaf3; --card:#fff; --text:#232323; --muted:#555;
+      --brand:#ff7a00; --brand-2:#ffd633; --border:#efe3cf;
+      --shadow:0 10px 22px rgba(0,0,0,.08);
+      --radius:18px; --container:1100px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Poppins',system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.8;
+    }
+    body.easy-read{
+      background:#fff;
+      color:#000;
+      font-size:1.1rem;
+      line-height:2;
+      letter-spacing:.2px;
+    }
+    img{max-width:100%;display:block;border-radius:14px}
+    a{text-decoration:none;color:var(--brand)}
+    a:hover{color:#b85d00}
+    .container{width:min(var(--container),92%);margin:auto}
+    .section{padding:clamp(28px,5vw,64px) 0}
+    .section-title{
+      font:700 clamp(22px,3vw,30px) 'Merriweather',serif;
+      display:flex;align-items:center;gap:10px;margin-bottom:14px
+    }
+    .card{background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+    .card-body{padding:14px}
+    .highlight{background:#fff9e6;border-left:6px solid var(--brand);padding:14px 18px;border-radius:12px;margin:14px 0}
+    .list{margin:10px 0 12px 22px}
+    .list li{margin-bottom:8px}
+    .checklist li{list-style:none;margin:8px 0;padding-left:28px;position:relative}
+    .checklist li::before{content:"\f14a";font-family:"Font Awesome 6 Free";font-weight:900;position:absolute;left:0;color:var(--brand)}
+    .hero{
+      background:radial-gradient(1200px 420px at 10% -10%,#fff1dc 0%,rgba(255,255,255,0) 60%),
+                 radial-gradient(1200px 420px at 90% -10%,#ffeaa6 0%,rgba(255,255,255,0) 60%);
+      padding:70px 0 36px;
+    }
+    .hero-inner{text-align:left;display:grid;gap:16px}
+    .hero h1{font:700 clamp(26px,4vw,40px) 'Merriweather',serif}
+    .hero p{max-width:780px;margin:10px 0 18px;font-size:18px;color:#333}
+    .pill{
+      display:inline-flex;gap:8px;align-items:center;
+      background:#fff;border:1px solid var(--border);
+      padding:8px 12px;border-radius:999px;font-size:14px;
+      color:#444;box-shadow:var(--shadow)
+    }
+    .back-btn,.btn,.btn-light{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 16px;border-radius:12px;
+      border:1px solid var(--border);
+      font-weight:600;cursor:pointer;
+      text-decoration:none;
+    }
+    .back-btn,.btn{
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      color:#222;border-color:#f0b45a;box-shadow:var(--shadow);
+    }
+    .back-btn:hover,.btn:hover{filter:brightness(.96);transform:translateY(-1px)}
+    .btn-light{
+      background:#fff;color:#333;box-shadow:var(--shadow);
+    }
+    .toc{
+      margin-top:10px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:12px 14px;
+      box-shadow:var(--shadow);
+      max-width:420px;
+    }
+    .toc strong{display:block;margin-bottom:6px}
+    .toc ul{list-style:none;display:grid;gap:6px;font-size:14px}
+    .toc a{color:var(--brand);display:flex;align-items:center;gap:6px}
+
+    .grid{display:grid;gap:16px}
+    @media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+    .alerta{
+      display:flex;gap:12px;align-items:flex-start;
+      background:#fff;border:1px solid var(--border);
+      border-radius:16px;padding:14px;
+      box-shadow:var(--shadow);margin-top:20px
+    }
+    .alerta i{font-size:22px;color:var(--brand)}
+
+    .site-footer{
+      background:#fff;margin-top:40px;
+      padding:24px 0;text-align:center;
+      border-top:1px solid var(--border);
+      color:#666;font-size:15px
+    }
+
+    /* HEADER PADRÃO */
+    .site-header{
+      background:#fff;
+      border-bottom:1px solid var(--border);
+      position:sticky;top:0;z-index:20;
+    }
+    .header-flex{
+      display:flex;align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:10px 0;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      color:inherit;text-decoration:none;
+    }
+    .brand-badge{
+      width:44px;height:44px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      font-weight:800;color:#000;
+    }
+    .brand-text h1{
+      font-family:'Merriweather',serif;
+      font-size:clamp(20px,2.3vw,26px);
+      line-height:1.1;
+    }
+    .brand-text p{
+      font-size:12px;color:var(--muted);
+    }
+    .menu-btn{
+      display:none;
+      width:40px;height:40px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      background:#fff;
+      box-shadow:var(--shadow);
+      align-items:center;justify-content:center;
+      cursor:pointer;
+    }
+    .top-nav{
+      display:flex;gap:12px;align-items:center;
+      font-size:14px;
+    }
+    .top-nav a{
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .top-nav a:hover{
+      background:#fff;box-shadow:var(--shadow);
+    }
+
+    @media(max-width:780px){
+      .menu-btn{display:flex}
+      .top-nav{
+        position:absolute;right:4%;top:60px;
+        background:#fff;
+        border:1px solid var(--border);
+        border-radius:14px;
+        padding:10px;
+        box-shadow:var(--shadow);
+        display:none;flex-direction:column;
+        min-width:190px;
+      }
+      .top-nav.open{display:flex}
+    }
+
+    /* ÁUDIO + BOTÕES */
+    .audio-toolbar{
+      margin:8px 0 8px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .audio-btn{
+      border-radius:999px;
+      padding:6px 12px;
+      border:1px solid var(--border);
+      background:#fff;
+      cursor:pointer;
+      font-size:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      box-shadow:var(--shadow);
+    }
+    .audio-btn:hover{background:#fff9e6}
+
+    /* PROGRESSO + VOLTAR AO TOPO + LEITURA FÁCIL */
+    #progressBar{
+      position:fixed;
+      top:0;left:0;
+      height:4px;
+      width:0%;
+      background:linear-gradient(90deg,var(--brand),var(--brand-2));
+      z-index:25;
+    }
+    .to-top{
+      position:fixed;
+      right:16px;bottom:16px;
+      width:44px;height:44px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      display:none;
+      align-items:center;justify-content:center;
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      z-index:30;
+    }
+    .to-top.show{display:flex}
+    #easyReadBtn{
+      position:fixed;
+      left:16px;bottom:16px;
+      padding:.55rem 1rem;
+      border-radius:999px;
+      border:0;
+      background:var(--brand-2);
+      box-shadow:var(--shadow);
+      font-weight:700;
+      cursor:pointer;
+      z-index:30;
+    }
+
+    /* ANIMAÇÃO */
+    [data-animate]{opacity:0;transform:translateY(26px);transition:all .55s ease-out}
+    [data-animate].visible{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+
+  <!-- Barra de progresso -->
+  <div id="progressBar" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-flex">
+      <a class="brand" href="index.html#noticias" aria-label="Página inicial Vida Saudável 60+">
+        <span class="brand-badge" aria-hidden="true">60+</span>
+        <div class="brand-text">
+          <h1>Vida Saudável</h1>
+          <p>Segurança • Inclusão • Autonomia</p>
+        </div>
+      </a>
+
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="topNav" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav id="topNav" class="top-nav" aria-label="Navegação desta página">
+        <a href="#inicio">Início</a>
+        <a href="#golpes">Golpes comuns</a>
+        <a href="#dicas">Dicas de segurança</a>
+        <a href="#aviso-final">Aviso</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Botão voltar -->
+  <section class="section container" style="padding-top:20px; padding-bottom:0;">
+    <a class="btn-light back-btn" href="index.html#noticias">← Voltar para a página inicial</a>
+  </section>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero" data-animate>
+    <div class="container hero-inner">
+      <div>
+        <span class="pill"><i class="fa-solid fa-shield-halved"></i> Segurança Digital • Proteja-se</span>
+        <h1>Cuidados com Golpes Digitais</h1>
+        <p>Aprenda a reconhecer, evitar e denunciar golpes virtuais. A segurança digital é parte da autonomia e da inclusão no mundo moderno.</p>
+
+        <!-- Áudio da página inteira -->
+        <div class="audio-toolbar">
+          <button class="audio-btn" data-section="page-all">🔊 Ouvir a página inteira</button>
+        </div>
+
+        <!-- Sumário -->
+        <nav class="toc" aria-label="Sumário desta página">
+          <strong>Sumário</strong>
+          <ul>
+            <li><a href="#golpes"><i class="fa-solid fa-triangle-exclamation"></i> Golpes mais comuns</a></li>
+            <li><a href="#dicas"><i class="fa-solid fa-lock"></i> Dicas de segurança</a></li>
+            <li><a href="#aviso-final"><i class="fa-solid fa-circle-info"></i> Aviso importante</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- Golpes Comuns -->
+    <section id="golpes" class="section" data-animate>
+      <div class="audio-toolbar">
+        <button class="audio-btn" data-section="golpes">🔊 Ouvir este tópico</button>
+      </div>
+
+      <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Golpes mais comuns</h2>
+      <div class="grid grid-3">
+        <article class="card"><div class="card-body">
+          <h3><i class="fa-solid fa-comments-dollar"></i> Mensagens falsas</h3>
+          <p>Golpistas enviam SMS ou mensagens de WhatsApp fingindo ser bancos, lojas ou parentes pedindo dinheiro.</p>
+          <ul class="list checklist">
+            <li>Desconfie de urgência e pedidos de código.</li>
+            <li>Não clique em links desconhecidos.</li>
+          </ul>
+        </div></article>
+
+        <article class="card"><div class="card-body">
+          <h3><i class="fa-solid fa-gift"></i> Prêmios falsos</h3>
+          <p>Ofertas falsas prometem brindes, sorteios ou cupons, mas levam a sites perigosos.</p>
+          <ul class="list checklist">
+            <li>Nunca forneça CPF ou dados bancários.</li>
+            <li>Verifique se o site é oficial (https://).</li>
+          </ul>
+        </div></article>
+
+        <article class="card"><div class="card-body">
+          <h3><i class="fa-solid fa-user-secret"></i> Perfis falsos</h3>
+          <p>Criminosos fingem ser familiares ou amigos pedindo ajuda financeira ou dados pessoais.</p>
+          <ul class="list checklist">
+            <li>Confirme a identidade da pessoa.</li>
+            <li>Desconfie de pedidos fora do comum.</li>
+          </ul>
+        </div></article>
+      </div>
+    </section>
+
+    <!-- Dicas de Proteção -->
+    <section id="dicas" class="section" data-animate>
+      <div class="audio-toolbar">
+        <button class="audio-btn" data-section="dicas">🔊 Ouvir este tópico</button>
+      </div>
+
+      <h2 class="section-title"><i class="fa-solid fa-lock"></i> Dicas de segurança</h2>
+      <ul class="list checklist">
+        <li>Use <strong>senhas fortes</strong> com letras, números e símbolos.</li>
+        <li>Ative a <strong>verificação em duas etapas</strong> nos aplicativos.</li>
+        <li>Evite usar Wi-Fi público para acessar bancos.</li>
+        <li>Revise permissões de apps no celular.</li>
+        <li>Mantenha antivírus e sistema atualizados.</li>
+      </ul>
+      <div class="highlight">
+        <strong>Regra de ouro:</strong> na dúvida, <em>não clique</em> — peça ajuda a alguém de confiança.
+      </div>
+    </section>
+
+    <!-- Aviso -->
+    <section id="aviso-final" class="section" data-animate>
+      <div class="audio-toolbar">
+        <button class="audio-btn" data-section="aviso-final">🔊 Ouvir este tópico</button>
+      </div>
+
+      <div class="alerta">
+        <i class="fa-solid fa-circle-info"></i>
+        <p><strong>Aviso:</strong> Este conteúdo é educativo. Em caso de golpe, registre ocorrência na delegacia ou procure o <strong>Procon</strong> da sua cidade.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Voltar ao topo -->
+  <button id="toTop" class="to-top" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Botão modo leitura fácil -->
+  <button id="easyReadBtn" aria-label="Ativar modo leitura fácil">
+    👁️ Leitura Fácil
+  </button>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="anoAtual"></span> Vida Saudável 60+. Conteúdo educativo sobre segurança digital.</p>
+  </footer>
+
+  <script>
+    // Ano atual
+    document.getElementById('anoAtual').textContent = new Date().getFullYear();
+
+    // Menu responsivo
+    const menuBtn = document.getElementById('menuBtn');
+    const topNav = document.getElementById('topNav');
+    if (menuBtn && topNav) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = topNav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    // Barra de progresso + botão voltar ao topo
+    const bar = document.getElementById('progressBar');
+    const toTop = document.getElementById('toTop');
+
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const s = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      if (bar) bar.style.width = s + '%';
+      if (toTop) toTop.classList.toggle('show', h.scrollTop > 300);
+    }, { passive: true });
+
+    if (toTop) {
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior:'smooth' });
+      });
+    }
+
+    // Animação de entrada
+    const ob = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, {threshold:0.2});
+    document.querySelectorAll('[data-animate]').forEach(el => ob.observe(el));
+
+    // Modo leitura fácil
+    const easyBtn = document.getElementById('easyReadBtn');
+    if (easyBtn) {
+      easyBtn.addEventListener('click', () => {
+        document.body.classList.toggle('easy-read');
+      });
+    }
+
+    // LEITURA EM ÁUDIO
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) {
+        alert('Seu navegador não suporta leitura em voz. Tente usar o Google Chrome 😉');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'pt-BR';
+      utter.rate = 0.95;
+      utter.pitch = 1;
+      window.speechSynthesis.speak(utter);
+    }
+
+    document.querySelectorAll('.audio-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-section');
+
+        if (target === 'page-all') {
+          const main = document.querySelector('main');
+          if (!main) return;
+          const text = main.innerText;
+          speakText(text);
+          return;
+        }
+
+        const section = document.getElementById(target);
+        if (!section) return;
+        const text = section.innerText;
+        speakText(text);
+      });
+    });
+
+    // Cancela áudio ao sair da página
+    window.addEventListener('beforeunload', () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    });
+  </script>
+</body>
+</html>
