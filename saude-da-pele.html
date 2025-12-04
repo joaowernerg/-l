@@ -222,7 +222,7 @@
     </div>
   </footer>
 
-  <!-- JS da página -->
+  <!-- JS da página (PADRÃO IGUAL ÀS OUTRAS) -->
   <script>
     // Data de hoje em português
     (function setDataHoje(){
@@ -235,11 +235,8 @@
       el.textContent = texto;
     })();
 
-    // Ano atual no rodapé
-    (function(){
-      const el = document.getElementById('anoAtual');
-      if(el) el.textContent = new Date().getFullYear();
-    })();
+    // Ano atual
+    document.getElementById('anoAtual').textContent = new Date().getFullYear();
 
     // Menu responsivo
     const menuBtn = document.getElementById('menuBtn');
@@ -262,11 +259,9 @@
       if (toTop) toTop.classList.toggle('show', h.scrollTop > 300);
     }, { passive: true });
 
-    if (toTop) {
-      toTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior:'smooth' });
-      });
-    }
+    toTop?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior:'smooth' });
+    });
 
     // Animação de entrada
     const ob = new IntersectionObserver(entries => {
@@ -274,28 +269,29 @@
         if(e.isIntersecting) e.target.classList.add('visible');
       });
     }, {threshold:0.2});
+
     document.querySelectorAll('[data-animate]').forEach(el => ob.observe(el));
 
     // Modo leitura fácil
-    const easyBtn = document.getElementById('easyReadBtn');
-    if (easyBtn) {
-      easyBtn.addEventListener('click', () => {
-        document.body.classList.toggle('easy-read');
-      });
-    }
+    document.getElementById('easyReadBtn')?.addEventListener('click', () => {
+      document.body.classList.toggle('easy-read');
+    });
 
-    // ===== LEITURA EM ÁUDIO POR TÓPICO =====
+    // ===== LEITURA EM ÁUDIO POR TÓPICO (PADRÃO) =====
     function speakText(text) {
       if (!('speechSynthesis' in window)) {
         alert('Seu navegador não suporta leitura em voz. Tente usar o Google Chrome 😉');
         return;
       }
+
+      // Para o que estiver tocando
       window.speechSynthesis.cancel();
 
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = 'pt-BR';
-      utter.rate = 0.95;
+      utter.rate = 0.9;  // padrão (um pouco mais devagar)
       utter.pitch = 1;
+
       window.speechSynthesis.speak(utter);
     }
 
@@ -306,24 +302,20 @@
         if (target === 'page-all') {
           const main = document.querySelector('main');
           if (!main) return;
-          const text = main.innerText;
-          speakText(text);
+          speakText(main.innerText);
           return;
         }
 
         const section = document.getElementById(target);
         if (!section) return;
 
-        const text = section.innerText;
-        speakText(text);
+        speakText(section.innerText);
       });
     });
 
     // Cancela áudio ao sair da página
     window.addEventListener('beforeunload', () => {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
+      window.speechSynthesis.cancel();
     });
   </script>
 </body>

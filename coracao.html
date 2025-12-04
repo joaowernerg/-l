@@ -413,7 +413,7 @@
       });
     }
 
-    // ===== LEITURA EM ÁUDIO POR TÓPICO =====
+    // ===== LEITURA EM ÁUDIO POR TÓPICO (SEM TEXTO DE BOTÕES/MENU) =====
     function speakText(text) {
       if (!('speechSynthesis' in window)) {
         alert('Seu navegador não suporta leitura em voz. Tente usar o Google Chrome 😉');
@@ -428,23 +428,45 @@
       window.speechSynthesis.speak(utter);
     }
 
+    function extractCleanText(root) {
+      if (!root) return '';
+      const clone = root.cloneNode(true);
+
+      const removeSelectors = [
+        '.audio-toolbar',     // botões de áudio
+        'button',            // qualquer botão
+        'nav',               // menus/sumários
+        'a',                 // links (DOI, "Abrir no YouTube"...)
+        'iframe',            // vídeos
+        'script', 'style',   // segurança
+        '.thumb',            // container do iframe
+        '.actions-row',      // linha de ações
+        'i'                  // ícones
+      ];
+
+      clone.querySelectorAll(removeSelectors.join(',')).forEach(el => el.remove());
+
+      return (clone.textContent || '')
+        .replace(/[ \t]+\n/g, '\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .replace(/[ \t]{2,}/g, ' ')
+        .trim();
+    }
+
     document.querySelectorAll('.audio-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-section');
 
         if (target === 'page-all') {
           const main = document.querySelector('main');
-          if (!main) return;
-          const text = main.innerText;
-          speakText(text);
+          const text = extractCleanText(main);
+          if (text) speakText(text);
           return;
         }
 
         const section = document.getElementById(target);
-        if (!section) return;
-
-        const text = section.innerText;
-        speakText(text);
+        const text = extractCleanText(section);
+        if (text) speakText(text);
       });
     });
 

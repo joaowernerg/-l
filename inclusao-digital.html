@@ -66,8 +66,6 @@
 
   <main class="container">
 
-    <!-- Cada seção tem um botão de áudio no INÍCIO -->
-
     <!-- INTRODUÇÃO -->
     <section id="intro" class="section" data-animate>
       <div class="audio-toolbar">
@@ -317,21 +315,23 @@
 
     window.addEventListener('scroll', () => {
       const h = document.documentElement;
-      const s = (h.scrollTop)/(h.scrollHeight - h.clientHeight) * 100;
-      bar.style.width = s + '%';
-      toTop.classList.toggle('show', h.scrollTop > 300);
+      const s = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      if (bar) bar.style.width = s + '%';
+      if (toTop) toTop.classList.toggle('show', h.scrollTop > 300);
     }, { passive: true });
 
-    toTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior:'smooth' });
-    });
+    if (toTop) {
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
 
     // Animação de entrada
     const ob = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add('visible');
+        if (e.isIntersecting) e.target.classList.add('visible');
       });
-    }, {threshold:0.2});
+    }, { threshold: 0.2 });
 
     document.querySelectorAll('[data-animate]').forEach(el => ob.observe(el));
 
@@ -340,25 +340,43 @@
       document.body.classList.toggle('easy-read');
     });
 
-    // ===== LEITURA EM ÁUDIO POR TÓPICO =====
-    let currentUtterance = null;
-
+    // ===== LEITURA EM ÁUDIO (SEM LER MENU/BOTÕES/LINKS/VÍDEOS) =====
     function speakText(text) {
       if (!('speechSynthesis' in window)) {
         alert('Seu navegador não suporta leitura em voz. Tente usar o Google Chrome 😉');
         return;
       }
-
-      // Para o que estiver tocando
       window.speechSynthesis.cancel();
 
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = 'pt-BR';
-      utter.rate = 0.9;   // um pouco mais devagar
+      utter.rate = 0.9;
       utter.pitch = 1;
-      currentUtterance = utter;
-
       window.speechSynthesis.speak(utter);
+    }
+
+    function extractCleanText(root) {
+      if (!root) return '';
+      const clone = root.cloneNode(true);
+
+      const removeSelectors = [
+        '.audio-toolbar',  // botões de áudio
+        'button',          // botões
+        'nav',             // menus/sumário
+        'a',               // links
+        'iframe',          // vídeos
+        '.video-wrap',     // wrappers
+        'script', 'style', // segurança
+        'i'                // ícones
+      ];
+
+      clone.querySelectorAll(removeSelectors.join(',')).forEach(el => el.remove());
+
+      return (clone.textContent || '')
+        .replace(/[ \t]+\n/g, '\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .replace(/[ \t]{2,}/g, ' ')
+        .trim();
     }
 
     // Botões de áudio por seção
@@ -367,24 +385,21 @@
         const target = btn.getAttribute('data-section');
 
         if (target === 'page-all') {
-          // Ler página inteira (principalmente o conteúdo do <main>)
           const main = document.querySelector('main');
-          const text = main.innerText;
-          speakText(text);
+          const text = extractCleanText(main);
+          if (text) speakText(text);
           return;
         }
 
         const section = document.getElementById(target);
-        if (!section) return;
-
-        const text = section.innerText;
-        speakText(text);
+        const text = extractCleanText(section);
+        if (text) speakText(text);
       });
     });
 
-    // Opcional: parar áudio ao trocar de aba/fechar
+    // Para áudio ao fechar/trocar
     window.addEventListener('beforeunload', () => {
-      window.speechSynthesis.cancel();
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
     });
   </script>
 </body>

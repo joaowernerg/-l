@@ -288,7 +288,7 @@
     </div>
   </footer>
 
-  <!-- JS desta página (mesmo padrão das outras) -->
+  <!-- JS desta página (padrão das outras) -->
   <script>
     // Data de hoje em português
     (function setDataHoje(){
@@ -302,10 +302,7 @@
     })();
 
     // Ano atual no rodapé
-    (function(){
-      const el = document.getElementById('anoAtual');
-      if(el) el.textContent = new Date().getFullYear();
-    })();
+    document.getElementById('anoAtual').textContent = new Date().getFullYear();
 
     // Menu responsivo
     const menuBtn = document.getElementById('menuBtn');
@@ -323,16 +320,14 @@
 
     window.addEventListener('scroll', () => {
       const h = document.documentElement;
-      const s = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-      if (bar) bar.style.width = s + '%';
-      if (toTop) toTop.classList.toggle('show', h.scrollTop > 300);
+      const s = (h.scrollTop)/(h.scrollHeight - h.clientHeight) * 100;
+      bar.style.width = s + '%';
+      toTop.classList.toggle('show', h.scrollTop > 300);
     }, { passive: true });
 
-    if (toTop) {
-      toTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior:'smooth' });
-      });
-    }
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior:'smooth' });
+    });
 
     // Animação de entrada
     const ob = new IntersectionObserver(entries => {
@@ -343,54 +338,52 @@
 
     document.querySelectorAll('[data-animate]').forEach(el => ob.observe(el));
 
-    // Modo leitura fácil
-    const easyBtn = document.getElementById('easyReadBtn');
-    if (easyBtn) {
-      easyBtn.addEventListener('click', () => {
-        document.body.classList.toggle('easy-read');
-      });
-    }
+    // Leitura Fácil (modo fonte maior / contraste)
+    document.getElementById('easyReadBtn').addEventListener('click', () => {
+      document.body.classList.toggle('easy-read');
+    });
 
-    // ===== LEITURA EM ÁUDIO POR TÓPICO =====
+    // ===== LEITURA EM ÁUDIO POR TÓPICO (PADRÃO) =====
     function speakText(text) {
       if (!('speechSynthesis' in window)) {
         alert('Seu navegador não suporta leitura em voz. Tente usar o Google Chrome 😉');
         return;
       }
+
+      // Para o que estiver tocando
       window.speechSynthesis.cancel();
 
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = 'pt-BR';
       utter.rate = 0.95;
       utter.pitch = 1;
+
       window.speechSynthesis.speak(utter);
     }
 
+    // Botões de áudio por seção
     document.querySelectorAll('.audio-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-section');
 
         if (target === 'page-all') {
+          // Ler página inteira (principalmente o conteúdo do <main>)
           const main = document.querySelector('main');
           if (!main) return;
-          const text = main.innerText;
-          speakText(text);
+          speakText(main.innerText);
           return;
         }
 
         const section = document.getElementById(target);
         if (!section) return;
 
-        const text = section.innerText;
-        speakText(text);
+        speakText(section.innerText);
       });
     });
 
     // Cancela áudio ao sair da página
     window.addEventListener('beforeunload', () => {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
+      window.speechSynthesis.cancel();
     });
   </script>
 </body>

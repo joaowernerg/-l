@@ -16,9 +16,9 @@
       --bg:#fffaf3; --text:#232323; --muted:#444;
       --brand:#ff7a00; --brand-2:#ffd633;
       --card:#fff; --border:#e5e0d0;
+      --shadow:0 10px 22px rgba(0,0,0,.08);
     }
 
-    /* Reset básico */
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -35,97 +35,146 @@
       letter-spacing:.2px;
     }
 
-    /* ===== Layout base ===== */
     .container{width:90%;max-width:1100px;margin:0 auto}
+
+    /* ===== Header ===== */
+    #progressBar{position:fixed;top:0;left:0;height:5px;background:var(--brand);width:0%;z-index:999}
+
     .site-header{
       background:var(--card); border-bottom:2px solid var(--border);
       position:sticky; top:0; z-index:100; padding:1rem 0;
     }
-    .header-grid{display:flex;align-items:center;justify-content:space-between}
+    .header-grid{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:inherit}
     .brand-badge{
-      width:48px;height:48px;border-radius:50%;
-      background:var(--brand);color:#fff;font-weight:700;display:grid;place-items:center
+      width:48px;height:48px;border-radius:14px;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      color:#000;font-weight:800;display:grid;place-items:center;
+      box-shadow:var(--shadow);
     }
-    .brand-text h1{font-family:'Merriweather',serif;font-size:1.45rem}
+    .brand-text h1{font-family:'Merriweather',serif;font-size:1.45rem;line-height:1.1}
     .brand-text p{font-size:.9rem;color:var(--muted)}
 
-    .menu-btn{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer}
-    .top-nav{display:flex;gap:1.5rem}
-    .top-nav a{text-decoration:none;color:var(--text);font-weight:500}
-    .top-nav a:hover{color:var(--brand)}
+    .menu-btn{
+      display:none;
+      width:42px;height:42px;border-radius:12px;
+      background:#fff;border:1px solid var(--border);
+      font-size:1.1rem;cursor:pointer;box-shadow:var(--shadow);
+    }
+    .top-nav{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+    .top-nav a{
+      text-decoration:none;color:var(--text);font-weight:600;
+      padding:.35rem .7rem;border-radius:999px;
+    }
+    .top-nav a:hover{color:var(--brand);background:#fff;box-shadow:var(--shadow)}
 
     /* ===== Hero ===== */
     .hero{
-      background:linear-gradient(135deg,#fff7eb,#ffedd1);
-      border-bottom:2px solid var(--border); padding:2.5rem 0 3rem;
+      background:radial-gradient(1200px 420px at 10% -10%,#fff1dc 0%,rgba(255,255,255,0) 60%),
+                 radial-gradient(1200px 420px at 90% -10%,#ffeaa6 0%,rgba(255,255,255,0) 60%);
+      border-bottom:2px solid var(--border);
+      padding:2.5rem 0 3rem;
     }
     .hero-grid{display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start}
     .hero-text{flex:2 1 420px}
     .hero h2{font-family:'Merriweather',serif;font-size:2rem;color:var(--brand);margin:.25rem 0 1rem}
     .hero h2 span{color:var(--text)}
-    .hero p{color:var(--muted);font-size:1.06rem;margin-bottom:1.5rem}
-    .hero-date{display:inline-block;background:var(--brand);color:#fff;
-      padding:.3rem .6rem;border-radius:6px;font-size:.9rem}
-    .toc{background:#fff;border-left:5px solid var(--brand);padding:1rem;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    .hero p{color:var(--muted);font-size:1.06rem;margin-bottom:1.2rem}
+    .hero-date{
+      display:inline-block;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      color:#000;
+      padding:.35rem .7rem;border-radius:10px;font-size:.9rem;
+      font-weight:800;
+      box-shadow:var(--shadow);
+    }
+
+    .toc{
+      background:#fff;
+      border:1px solid var(--border);
+      border-left:6px solid var(--brand);
+      padding:1rem;border-radius:14px;
+      box-shadow:var(--shadow);
+      max-width:520px;
+    }
     .toc strong{display:block;margin-bottom:.6rem}
     .toc ul{list-style:none}
     .toc li{margin:.4rem 0}
     .toc a{color:var(--brand);text-decoration:none}
     .toc a:hover{text-decoration:underline}
+
     .alerta{
-      flex:1 1 260px;background:#fff5e6;border:1px solid #ffd699;border-radius:10px;
-      padding:1rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:0 2px 6px rgba(0,0,0,.05)
+      flex:1 1 260px;background:#fff5e6;border:1px solid #ffd699;border-radius:14px;
+      padding:1rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:var(--shadow)
     }
+    .alerta i{color:#a66300;font-size:1.15rem;margin-top:2px}
     .alerta h3{color:#a66300;margin-bottom:.25rem}
 
     /* ===== Seções ===== */
     .section{
-      background:var(--card);border-radius:12px;padding:2rem;margin:2.5rem auto;
-      box-shadow:0 3px 8px rgba(0,0,0,.05)
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:2rem;
+      margin:2.2rem auto;
+      box-shadow:var(--shadow)
     }
     .section-title{
       font-family:'Merriweather',serif;color:var(--brand);margin-bottom:1rem;
-      display:flex;gap:.5rem;align-items:center
+      display:flex;gap:.6rem;align-items:center
     }
     .list{list-style:disc;padding-left:1.4rem;color:var(--muted)}
     .list li{margin:.4rem 0}
+
     .callouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:1rem}
-    .callout{background:#fffaf1;border:1px solid var(--border);border-left:6px solid var(--brand);padding:1rem;border-radius:10px}
+    .callout{
+      background:#fffaf1;border:1px solid var(--border);
+      border-left:6px solid var(--brand);
+      padding:1rem;border-radius:14px
+    }
     .callout h4{color:var(--brand);margin-bottom:.3rem}
+
     .tips{margin-top:1rem}
-    .tip{display:flex;gap:.6rem;background:#fff8e1;padding:.75rem;border-radius:8px;margin:.5rem 0}
-    .tip i{color:var(--brand)}
+    .tip{display:flex;gap:.6rem;background:#fff8e1;padding:.75rem;border-radius:12px;margin:.5rem 0}
+    .tip i{color:var(--brand);margin-top:2px}
 
     /* ===== Tabelas ===== */
     .compare{margin-top:1rem}
-    .clean{width:100%;border-collapse:collapse}
+    .clean{width:100%;border-collapse:collapse;background:#fff}
     .clean th,.clean td{border:1px solid #e6e6e6;padding:.9rem;vertical-align:top}
-    .clean th{background:#fff2cc;font-weight:600}
+    .clean th{background:#fff2cc;font-weight:700}
 
-    /* ===== Voltar ao topo & Progress ===== */
-    #progressBar{position:fixed;top:0;left:0;height:5px;background:var(--brand);width:0%;z-index:999}
+    /* ===== Voltar ao topo & Leitura Fácil ===== */
     .to-top{
-      position:fixed;right:1rem;bottom:1rem;width:46px;height:46px;border-radius:50%;
-      border:0;background:var(--brand);color:#fff;font-size:1.2rem;display:none;cursor:pointer
+      position:fixed;right:1rem;bottom:1rem;width:46px;height:46px;border-radius:14px;
+      border:1px solid var(--border);
+      background:#fff;color:var(--text);
+      display:none;cursor:pointer;box-shadow:var(--shadow)
     }
     .to-top.show{display:grid;place-items:center}
 
-    /* ===== Botão leitura fácil ===== */
     #easyReadBtn{
       position:fixed;left:1rem;bottom:1rem;background:var(--brand-2);color:#000;border:0;
-      border-radius:22px;padding:.55rem 1rem;font-weight:700;cursor:pointer;box-shadow:0 3px 6px rgba(0,0,0,.15)
+      border-radius:999px;padding:.55rem 1rem;font-weight:800;cursor:pointer;box-shadow:var(--shadow)
     }
 
     /* ===== Rodapé ===== */
-    .site-footer{background:var(--card);border-top:2px solid var(--border);text-align:center;padding:1.5rem 0;color:var(--muted);font-size:.95rem}
+    .site-footer{
+      background:var(--card);
+      border-top:2px solid var(--border);
+      text-align:center;padding:1.5rem 0;color:var(--muted);
+      font-size:.95rem;margin-top:24px
+    }
 
     /* ===== Responsividade ===== */
     @media (max-width:768px){
-      .menu-btn{display:block}
+      .menu-btn{display:grid;place-items:center}
+      .site-header{padding:.8rem 0}
       .top-nav{
-        display:none;flex-direction:column;position:absolute;right:0;top:70px;width:100%;
-        background:var(--card);border-top:2px solid var(--border);padding:1rem
+        display:none;flex-direction:column;align-items:flex-start;
+        position:absolute;left:0;top:78px;width:100%;
+        background:var(--card);border-top:2px solid var(--border);
+        padding:1rem
       }
       .top-nav.open{display:flex}
       .hero h2{font-size:1.6rem}
@@ -141,7 +190,7 @@
   <!-- ===== HEADER ===== -->
   <header class="site-header" role="banner">
     <div class="container header-grid">
-      <a class="brand" href="index.html" aria-label="Página inicial Vida Saudável 60+">
+      <a class="brand" href="index.html#noticias" aria-label="Página inicial Vida Saudável 60+">
         <span class="brand-badge" aria-hidden="true">60+</span>
         <div class="brand-text">
           <h1>Vida Saudável</h1>
@@ -228,7 +277,7 @@
       <h3 class="section-title"><i class="fa-solid fa-file-signature"></i> 2. Consentimento &amp; capacidade de decisão</h3>
       <ul class="list">
         <li><strong>Consentimento informado</strong>: explicar objetivos, riscos, benefícios e alternativas em linguagem simples.</li>
-        <li><strong>Avaliar capacidade</strong> de decisão (entender, reter, ponderar e comunicar escolhas). Capacidade pode variar ao longo do tempo.</li>
+        <li><strong>Avaliar capacidade</strong> de decisão (entender, reter, ponderar e comunicar escolhas). A capacidade pode variar ao longo do tempo.</li>
         <li><strong>Decisão compartilhada</strong>: incluir a pessoa idosa nas decisões sempre que possível; envolver família/cuidador quando houver autorização.</li>
         <li><strong>Representação</strong>: quando a pessoa não puder decidir, seguir documentos válidos (ex.: diretivas antecipadas) e representante legal, conforme normas locais.</li>
       </ul>
@@ -243,7 +292,7 @@
       <h3 class="section-title"><i class="fa-solid fa-scale-unbalanced"></i> 3. Autonomia × segurança</h3>
       <p>Equilibrar liberdade e proteção exige <strong>avaliação individual</strong> de riscos e preferências. Medidas menos restritivas devem ser priorizadas antes de qualquer restrição maior.</p>
       <div class="compare">
-        <table class="clean table--stack" aria-label="Exemplos práticos de equilíbrio entre autonomia e segurança">
+        <table class="clean" aria-label="Exemplos práticos de equilíbrio entre autonomia e segurança">
           <thead>
             <tr>
               <th style="width:50%">Situação</th>
@@ -252,16 +301,16 @@
           </thead>
           <tbody>
             <tr>
-              <td data-th="Situação">Desejo de caminhar sozinho, mas risco de queda</td>
-              <td data-th="Conduta">Planejar rotas seguras, uso de bengala/andador, horários com menos movimento e checagem prévia do trajeto</td>
+              <td>Desejo de caminhar sozinho, mas risco de queda</td>
+              <td>Planejar rotas seguras, uso de bengala/andador, horários com menos movimento e checagem prévia do trajeto.</td>
             </tr>
             <tr>
-              <td data-th="Situação">Recusa de um cuidado de rotina</td>
-              <td data-th="Conduta">Revisar explicação, entender motivos, propor alternativas e respeitar decisão quando houver capacidade</td>
+              <td>Recusa de um cuidado de rotina</td>
+              <td>Revisar explicação, entender motivos, propor alternativas e respeitar decisão quando houver capacidade.</td>
             </tr>
             <tr>
-              <td data-th="Situação">Saídas desacompanhadas com desorientação ocasional</td>
-              <td data-th="Conduta">Identificação pessoal, contato de emergência, tecnologia de localização e educação da vizinhança</td>
+              <td>Saídas desacompanhadas com desorientação ocasional</td>
+              <td>Identificação pessoal, contato de emergência, tecnologia de localização e educação da vizinhança.</td>
             </tr>
           </tbody>
         </table>
@@ -337,7 +386,7 @@
     <section id="checklist" class="section container">
       <h3 class="section-title"><i class="fa-solid fa-list-check"></i> Checklist ético rápido</h3>
       <div class="compare">
-        <table class="clean table--stack" aria-label="Checklist ético: faça e evite">
+        <table class="clean" aria-label="Checklist ético: faça e evite">
           <thead>
             <tr>
               <th style="width:50%">Faça</th>
@@ -346,24 +395,24 @@
           </thead>
           <tbody>
             <tr>
-              <td data-th="Faça"><em>Escute</em> preferências e explique opções com linguagem simples</td>
-              <td data-th="Evite">Decidir sem envolver a pessoa idosa</td>
+              <td><em>Escute</em> preferências e explique opções com linguagem simples</td>
+              <td>Decidir sem envolver a pessoa idosa</td>
             </tr>
             <tr>
-              <td data-th="Faça">Documente consentimentos, recusas e orientações</td>
-              <td data-th="Evite">Realizar procedimentos sem registro</td>
+              <td>Documente consentimentos, recusas e orientações</td>
+              <td>Realizar procedimentos sem registro</td>
             </tr>
             <tr>
-              <td data-th="Faça">Proteja dados e privacidade</td>
-              <td data-th="Evite">Compartilhar informações sem autorização</td>
+              <td>Proteja dados e privacidade</td>
+              <td>Compartilhar informações sem autorização</td>
             </tr>
             <tr>
-              <td data-th="Faça">Tentar alternativas antes de qualquer restrição</td>
-              <td data-th="Evite">Usar contenção como rotina</td>
+              <td>Tente alternativas antes de qualquer restrição</td>
+              <td>Usar contenção como rotina</td>
             </tr>
             <tr>
-              <td data-th="Faça">Buscar ajuda em situações de violência/abuso</td>
-              <td data-th="Evite">Ignorar sinais de risco</td>
+              <td>Buscar ajuda em situações de violência/abuso</td>
+              <td>Ignorar sinais de risco</td>
             </tr>
           </tbody>
         </table>
@@ -388,37 +437,46 @@
     (function(){
       // Data e ano
       const d = new Date();
-      document.getElementById('dataHoje').textContent =
-        d.toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
-      document.getElementById('anoAtual').textContent = d.getFullYear();
+      const dataEl = document.getElementById('dataHoje');
+      const anoEl = document.getElementById('anoAtual');
+      if (dataEl) dataEl.textContent = d.toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
+      if (anoEl) anoEl.textContent = d.getFullYear();
 
       // Menu mobile
       const btn = document.getElementById('menuBtn');
       const nav = document.getElementById('topNav');
-      btn?.addEventListener('click', () => {
-        const open = nav.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
+      if (btn && nav) {
+        btn.addEventListener('click', () => {
+          const open = nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
 
       // Barra de progresso + voltar ao topo
       const bar = document.getElementById('progressBar');
       const toTop = document.getElementById('toTop');
+
       const onScroll = () => {
         const h = document.documentElement;
         const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-        if(bar) bar.style.width = scrolled + '%';
-        if(toTop){
-          h.scrollTop > 240 ? toTop.classList.add('show') : toTop.classList.remove('show');
-        }
+        if (bar) bar.style.width = scrolled + '%';
+        if (toTop) toTop.classList.toggle('show', h.scrollTop > 240);
       };
+
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
-      toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      if (toTop) {
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
 
       // Modo Leitura Fácil
-      document.getElementById('easyReadBtn').addEventListener('click', () => {
-        document.body.classList.toggle('easy-read');
-      });
+      const easyBtn = document.getElementById('easyReadBtn');
+      if (easyBtn) {
+        easyBtn.addEventListener('click', () => {
+          document.body.classList.toggle('easy-read');
+        });
+      }
     })();
   </script>
 </body>

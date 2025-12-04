@@ -416,7 +416,6 @@
         if(e.isIntersecting) e.target.classList.add('visible');
       });
     }, {threshold:0.2});
-
     document.querySelectorAll('[data-animate]').forEach(el => ob.observe(el));
 
     // Modo leitura fácil
@@ -427,7 +426,7 @@
       });
     }
 
-    // ===== LEITURA EM ÁUDIO POR TÓPICO =====
+    // ===== LEITURA EM ÁUDIO (SEM LER BOTÕES/MENU/LINKS/VÍDEOS/ÍCONES) =====
     function speakText(text) {
       if (!('speechSynthesis' in window)) {
         alert('Seu navegador não suporta leitura em voz. Tente usar o Google Chrome 😉');
@@ -442,23 +441,45 @@
       window.speechSynthesis.speak(utter);
     }
 
+    function extractCleanText(root) {
+      if (!root) return '';
+      const clone = root.cloneNode(true);
+
+      const removeSelectors = [
+        '.audio-toolbar',  // botões de áudio
+        'button',          // qualquer botão
+        'nav',             // menu e sumário
+        'a',               // links (DOI, "Abrir no YouTube"...)
+        'iframe',          // vídeos
+        '.video-wrap',     // wrapper do vídeo
+        '.actions-row',    // linha de botões
+        'script','style',  // segurança
+        'i'                // ícones
+      ];
+
+      clone.querySelectorAll(removeSelectors.join(',')).forEach(el => el.remove());
+
+      return (clone.textContent || '')
+        .replace(/[ \t]+\n/g, '\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .replace(/[ \t]{2,}/g, ' ')
+        .trim();
+    }
+
     document.querySelectorAll('.audio-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-section');
 
         if (target === 'page-all') {
           const main = document.querySelector('main');
-          if (!main) return;
-          const text = main.innerText;
-          speakText(text);
+          const text = extractCleanText(main);
+          if (text) speakText(text);
           return;
         }
 
         const section = document.getElementById(target);
-        if (!section) return;
-
-        const text = section.innerText;
-        speakText(text);
+        const text = extractCleanText(section);
+        if (text) speakText(text);
       });
     });
 
